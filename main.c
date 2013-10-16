@@ -50,8 +50,6 @@ void _setup(){
 		SDL_RenderPresent(bg_render);
 	}
 	
-	// Preparar tempo de frames
-	
 	/*
 		### PROVISIONAL ###
 	*/
