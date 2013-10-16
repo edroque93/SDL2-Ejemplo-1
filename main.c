@@ -43,12 +43,15 @@ void _setup(){
 	dest.h = 480;
 	
 	int i;
-	for (i = 0; i<640; i++) {	
+	for (i = 0; i<200; i++) {	
 		dest.x++;
 		//SDL_RenderClear(bg_render); // do NOT clear, I want this awesome effect :D
 		SDL_RenderCopy(bg_render, LoadImage("./res/bg.bmp", bg_render), NULL, &dest);
 		SDL_RenderPresent(bg_render);
 	}
+	
+	// Preparar tempo de frames
+	
 	/*
 		### PROVISIONAL ###
 	*/
