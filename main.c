@@ -50,9 +50,9 @@ void _setup(){
 	int i;
 	SDL_Texture* bg_text = LoadImage("./res/bg.png", bg_render); // POR FIN!!!
 	
-	for (i = 0; i<200; i++) {	
+	for (i = 0; i<640; i++) {	
 		dest.x++;
-		//SDL_RenderClear(bg_render); // do NOT clear, I want this awesome effect :D
+		//SDL_RenderClear(bg_render);
 		SDL_RenderCopy(bg_render, bg_text, NULL, &dest);
 		SDL_RenderPresent(bg_render);
 	}
