@@ -11,6 +11,10 @@ int main(){
 void _setup(){
 	if (SDL_Init(SDL_INIT_VIDEO) != 0)
 		_print_error("Can't initialize SDL", 1);
+		
+	if ((IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG) != IMG_INIT_PNG)
+		_print_error("Can't initialize IMG", 1);
+		
 
 	atexit(SDL_Quit); // SDL will safely exit
 
@@ -42,12 +46,14 @@ void _setup(){
 	dest.x = 0;
 	dest.w = 640;
 	dest.h = 480;
-	
+
 	int i;
+	SDL_Texture* bg_text = LoadImage("./res/bg.png", bg_render); // POR FIN!!!
+	
 	for (i = 0; i<200; i++) {	
 		dest.x++;
 		//SDL_RenderClear(bg_render); // do NOT clear, I want this awesome effect :D
-		SDL_RenderCopy(bg_render, LoadImage("./res/bg.bmp", bg_render), NULL, &dest);
+		SDL_RenderCopy(bg_render, bg_text, NULL, &dest);
 		SDL_RenderPresent(bg_render);
 	}
 	

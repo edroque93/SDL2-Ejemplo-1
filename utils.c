@@ -9,7 +9,11 @@ void _clean(){
 	SDL_DestroyWindow(window);
 }
 
+// Actualizando función para usar PNGs...
+
 SDL_Texture* LoadImage(char* file, SDL_Renderer* renderer) {
+	return IMG_LoadTexture(renderer, file);
+	
 	SDL_Surface* loaded_image;
 	SDL_Texture* texture;
 	
@@ -19,7 +23,7 @@ SDL_Texture* LoadImage(char* file, SDL_Renderer* renderer) {
 		texture = SDL_CreateTextureFromSurface(renderer, loaded_image);
 		SDL_FreeSurface(loaded_image);
 	} else
-		_print_error("Can't load image", 4);
-	
+		_print_error("Can't load image", 3);
+		
 	return texture;
 }
