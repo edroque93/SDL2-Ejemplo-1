@@ -68,7 +68,8 @@ void _game_loop(){
 	while (loop) {
 		loop = _poll_events();
 		
-		// Blabla render
+		// Frame control
+			// Blabla render
 	}
 }
 
